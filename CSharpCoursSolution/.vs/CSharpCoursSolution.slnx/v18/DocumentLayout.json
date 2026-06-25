@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\work\\CSharpCoursSolution\\",
+  "WorkspaceRootPath": "C:\\work\\repositories\\dotnet_learn\\CSharpCoursSolution\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{397BEE20-D1E3-ACB6-B22E-3D166144DFA1}|CSharpCours\\CSharpCours.csproj|c:\\work\\csharpcourssolution\\csharpcours\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{397BEE20-D1E3-ACB6-B22E-3D166144DFA1}|CSharpCours\\CSharpCours.csproj|c:\\work\\repositories\\dotnet_learn\\csharpcourssolution\\csharpcours\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{397BEE20-D1E3-ACB6-B22E-3D166144DFA1}|CSharpCours\\CSharpCours.csproj|solutionrelative:csharpcours\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\work\\CSharpCoursSolution\\CSharpCours\\Program.cs",
+              "DocumentMoniker": "C:\\work\\repositories\\dotnet_learn\\CSharpCoursSolution\\CSharpCours\\Program.cs",
               "RelativeDocumentMoniker": "CSharpCours\\Program.cs",
-              "ToolTip": "C:\\work\\CSharpCoursSolution\\CSharpCours\\Program.cs*",
-              "RelativeToolTip": "CSharpCours\\Program.cs*",
-              "ViewState": "AgIAABAAAAAAAAAAAAAkwB4AAAAsAAAAAAAAAA==",
+              "ToolTip": "C:\\work\\repositories\\dotnet_learn\\CSharpCoursSolution\\CSharpCours\\Program.cs",
+              "RelativeToolTip": "CSharpCours\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-22T16:34:26.056Z",
               "EditorCaption": ""
