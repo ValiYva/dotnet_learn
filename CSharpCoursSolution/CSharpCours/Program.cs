@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Formats.Asn1;
 using System.Text;
+using System.Xml;
 
 namespace CSharpCours
 {
@@ -8,9 +9,97 @@ namespace CSharpCours
     {
         static void Main(string[] args)
         {
-
             {
-                int[] a1;
+                Console.WriteLine($"What's yor name");
+                string name = Console.ReadLine();
+
+                Console.WriteLine($"What's yor Surname");
+                string surname = Console.ReadLine();
+
+                Console.WriteLine($"What's yor age");
+                string age = Console.ReadLine();
+
+                Console.WriteLine($"What's yor weight in kg?");
+                double weight = Convert.ToDouble( Console.ReadLine());
+
+                Console.WriteLine($"What's your height in cm ?");
+                double height = Convert.ToDouble(Console.ReadLine());
+
+                double bmi = weight / (height * height);
+
+                Console.WriteLine($"\nYour profile: \nYoure name:{name} \nFull name:{surname} \nAge:{age}  \nYour Body Mass Index:{bmi:F1}  ");
+
+
+
+
+            }
+
+            static void Homework3()
+            {
+                Console.WriteLine($" Enter the third side of the triangle A ");
+                double a = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine($" Enter the third side of the triangle B ");
+                double b = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine($" Enter the third side of the triangle C ");
+                double c = Convert.ToDouble(Console.ReadLine());
+
+                double p = (a + b + c) / 2.0;
+
+                double area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+
+                Console.WriteLine($"Third of triangle (S) = {area:F2}");
+
+
+         
+            }
+
+            static void Homework2()
+            {
+                //Homework #2
+                Console.WriteLine($"Enter an integer ");
+                int a = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"Enter an integer ");
+                int b = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"a={a}, b={b}");
+
+                int c = a;
+                a = b;
+                b = c;
+                Console.WriteLine($"a={a}, b={b}");
+            }
+
+            static void Homework1()
+            {
+               //Homework #1 
+
+               Console.WriteLine($"WHat is yor name?");
+
+               string name = Console.ReadLine();
+
+               Console.WriteLine($"Hello {name}, nice to meet you! ");
+            }
+
+            static void DateTimeExample()
+            {
+                DateTime now = DateTime.Now;
+                Console.WriteLine(now.ToString());
+
+                Console.WriteLine($"It's {now.Date}, {now.Hour}:{now.Minute}");
+
+                DateTime dt = new DateTime(2019, 02, 21);
+                DateTime newDt = dt.AddDays(1);
+                Console.WriteLine(newDt);
+                TimeSpan ts = newDt - dt;
+                Console.WriteLine(ts.Days);
+            }
+
+            static void ArrayExample()
+                {
+                    int[] a1;
                 a1 = new int[10];
                 int[] a2 = new int[5];
                 int[] a3 = new int[5] { 1, 2, 4, 5, 6 };
@@ -279,4 +368,4 @@ namespace CSharpCours
         }
 
     }
-}
+}          
