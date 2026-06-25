@@ -7,7 +7,31 @@ namespace CSharpCours
     class Program
     {
         static void Main(string[] args)
-         {
+        {
+
+            {
+                int[] a1;
+                a1 = new int[10];
+                int[] a2 = new int[5];
+                int[] a3 = new int[5] { 1, 2, 4, 5, 6 };
+                int[] a4 = { 1, 2, 4, 5, 6 };
+                Console.WriteLine(a4[0]);
+                int number = a4[4];
+                Console.WriteLine(number);
+
+                a4[4] = 6;
+                Console.WriteLine(a4[4]);
+
+                Console.WriteLine(a4.Length);
+                Console.WriteLine(a4[a4.Length - 1]);
+                string s1 = " FWFWEFWEF WEF";
+                char first = s1[0];
+                char last = s1[s1.Length - 1];
+                Console.WriteLine($"First:{first}. Last:{last}");
+
+            }
+
+            static void StringInterpolation()
             {
                 string name = "Vali";
                 int age = 28;
@@ -79,7 +103,7 @@ namespace CSharpCours
                 string[] splindata = data.Split(';');
                 string first = splindata[0];
                 Console.WriteLine(first);
-              char[] chars = nameConcat.ToCharArray();
+                char[] chars = nameConcat.ToCharArray();
 
                 string lower = nameConcat.ToLower();
                 Console.WriteLine(lower);
@@ -132,7 +156,7 @@ namespace CSharpCours
             static void StringMethods2()
             {
 
-               
+
                 string name = "abracadabra";
                 bool containsA = name.Contains('a');
                 bool containsE = name.Contains("e");
@@ -140,7 +164,7 @@ namespace CSharpCours
                 Console.WriteLine(containsE);
                 Console.WriteLine(containsA);
 
-                bool endWithAbra = name.EndsWith ("ebra");
+                bool endWithAbra = name.EndsWith("ebra");
                 Console.WriteLine(endWithAbra);
 
                 bool startWithAbra = name.StartsWith("abra");
