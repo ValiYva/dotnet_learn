@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="2_CSharpCoursSolution/2_CSharpCoursSolution.csproj" />
+  <Project Path="A_CSharpCours_Copy/A_CSharpCours_Copy.csproj" />
+  <Project Path="B_ControlFlow_Copy/B_ControlFlow_Copy.csproj" />
+  <Project Path="C_ArraysCollections_Copy/C_ArraysCollections_Copy.csproj" />
+  <Project Path="D_OOP/D_OOP.csproj" />
+</Solution>
