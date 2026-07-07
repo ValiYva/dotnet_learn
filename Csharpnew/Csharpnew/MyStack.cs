@@ -6,5 +6,6 @@ namespace Csharpnew
 {
     internal class MyStack
     {
+        private string _name;
     }
 }
