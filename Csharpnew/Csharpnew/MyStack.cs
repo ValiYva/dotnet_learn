@@ -7,5 +7,8 @@ namespace Csharpnew
     internal class MyStack
     {
         private string _name;
+        public string MyName = "Artem";
+
+        
     }
 }
