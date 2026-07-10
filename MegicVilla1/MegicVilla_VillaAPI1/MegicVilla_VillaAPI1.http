@@ -1,0 +1,6 @@
+@MegicVilla_VillaAPI1_HostAddress = http://localhost:5204
+
+GET {{MegicVilla_VillaAPI1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
