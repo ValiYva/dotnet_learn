@@ -7,7 +7,8 @@ namespace Csharpnew
 {
     public class MyStack<T>
     {
-        private T[] _items;
+        private string _name;
+        public string MyName = "Artem";
 
         public int Count { get; private set; }
         public int Capacity
