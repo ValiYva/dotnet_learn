@@ -4,8 +4,5 @@
   <Project Path="B_ControlFlow_Copy/B_ControlFlow_Copy.csproj" />
   <Project Path="C_ArraysCollections_Copy/C_ArraysCollections_Copy.csproj" />
   <Project Path="D_OOP/D_OOP.csproj" />
-<<<<<<< Updated upstream
-=======
-  <Project Path="newPerson/newPerson.csproj" />
->>>>>>> Stashed changes
+
 </Solution>

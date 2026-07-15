@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="Csharpnew/Csharpnew.csproj" />
+  <Project Path="D_OOP/D_OOP.csproj" />
+  <Project Path="newPerson/newPerson.csproj" />
 </Solution>
