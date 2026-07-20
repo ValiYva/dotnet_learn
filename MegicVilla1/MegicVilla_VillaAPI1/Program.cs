@@ -2,6 +2,8 @@
 
 using MegicVilla_VillaAPI1;
 using MegicVilla_VillaAPI1.Data;
+using MegicVilla_VillaAPI1.Repository;
+using MegicVilla_VillaAPI1.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +13,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(option =>
 {
     option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultSQLConnection"));
 });
-builder.Services.AddAutoMapper(typeof(MappingConfig));
+builder.Services.AddScoped<IVillaNumberRepository, VillaNumberRepository>();
+builder.Services.AddScoped<IVillaRepository, VillaRepository>();
+builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingConfig>());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
