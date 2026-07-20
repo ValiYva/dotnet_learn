@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MegicVilla_VillaAPI1.Models;
 using MegicVilla_VillaAPI1.Models.Dto;
-using System.Runtime;
+
 
 namespace MegicVilla_VillaAPI1
 {
@@ -14,6 +14,10 @@ namespace MegicVilla_VillaAPI1
 
             CreateMap<Villa, VillaCreateDTO>().ReverseMap();
             CreateMap<Villa, VillaUpdateDTO>().ReverseMap();
+
+            CreateMap<VillaNumber, VillaNumberDTO>().ReverseMap();
+            CreateMap<VillaNumber, VillaNumberCreateDTO>().ReverseMap();
+            CreateMap<VillaNumber, VillaNumberUpdateDTO>().ReverseMap();
         }
     }
 }

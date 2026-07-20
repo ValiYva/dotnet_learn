@@ -13,9 +13,18 @@ namespace MegicVilla_VillaAPI1.Repository.IRepository
         public async Task<VillaNumber> UpdateAsync(VillaNumber entity)
         {
             entity.UpdatedDate = DateTime.Now;
+            _db.ChangeTracker.Clear();
             _db.VillaNumbers.Update(entity);
             await _db.SaveChangesAsync();
-            return entity;
+            return entity;   
+        }
+
+        public async Task CreateAsync(VillaNumber entity)
+        {
+            entity.CreatedDate = DateTime.Now;
+            entity.UpdatedDate = DateTime.Now;
+            await base.CreateAsync(entity);
         }
     }
+
 }

@@ -4,6 +4,7 @@ using MegicVilla_VillaAPI1.Models.Dto;
 using MegicVilla_VillaAPI1.Repository.IRepository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace MegicVilla_VillaAPI1.Controllers
 {
@@ -81,6 +82,10 @@ namespace MegicVilla_VillaAPI1.Controllers
         {
             try
             {
+                if (createDTO == null)
+                {
+                    return BadRequest(createDTO);
+                }
                 if (await _dbVillaNumber.GetAsync(u => u.VillaNo == createDTO.VillaNo) != null)
                 {
                     ModelState.AddModelError("ErrorMessages", "Villa Number already exists!");
@@ -91,10 +96,7 @@ namespace MegicVilla_VillaAPI1.Controllers
                     ModelState.AddModelError("ErrorMessages", "Villa ID is Invalid!");
                     return BadRequest(ModelState);
                 }
-                if (createDTO == null)
-                {
-                    return BadRequest(createDTO);
-                }
+               
                 VillaNumber villaNumber = _mapper.Map<VillaNumber>(createDTO);
                 await _dbVillaNumber.CreateAsync(villaNumber);
                 _response.Result = _mapper.Map<VillaNumberDTO>(villaNumber);
@@ -107,7 +109,72 @@ namespace MegicVilla_VillaAPI1.Controllers
                 _response.ErrorMessages = new List<string>() { ex.ToString() };
             }
             return _response;
-        } 
-    }   
+        }
+        [HttpDelete("{id:int}", Name = "DeleteVillaNumber")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<APIResponse>> DeleteVillaNumber(int id)
+        {
+            try
+            {
+                if (id == 0)
+                {
+                    return BadRequest();
+                }
+                var villaNumber = await _dbVillaNumber.GetAsync(v => v.VillaNo == id);
+                if (villaNumber == null)
+                {
+                    return NotFound();
+                }
+                await _dbVillaNumber.RemoveAsync(villaNumber);
+                _response.StatusCode = HttpStatusCode.NoContent;
+                _response.IsSuccess = true;
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+            }
+            return _response;
+        }
+        [HttpPut("{id:int}", Name = "UpdateVillaNumber")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<ActionResult<APIResponse>> UpdateVillaNumber(int id, [FromBody] VillaNumberUpdateDTO updateDTO)
+        {
+            try
+            {
+                if (updateDTO == null || id != updateDTO.VillaNo)
+                {
+                    return BadRequest();
+                }
+                if (await _dbVilla.GetAsync(u => u.Id == updateDTO.VillaID) == null)
+                {
+                    ModelState.AddModelError("ErrorMessages", "The Villa ID doesn't exist ");
+                    return BadRequest(ModelState);
+                }
+                var villaNumber = await _dbVillaNumber.GetAsync(u => u.VillaNo == id);
+                if (villaNumber == null)
+                {
+                    return NotFound();
+                }
+                VillaNumber model = _mapper.Map<VillaNumber>(updateDTO);
+                await _dbVillaNumber.UpdateAsync(model);
+                _response.StatusCode = HttpStatusCode.NoContent;
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.ErrorMessages = new List<string>() { ex.ToString() };
+            }
+            return _response;
+   
 
+        }
+
+    }
 }
